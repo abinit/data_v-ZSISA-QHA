@@ -1,0 +1,52 @@
+############################################################################################
+#### Global Variables.
+############################################################################################
+ #autoparal 1
+ nline 10
+ nbdbuf 0
+ nshiftk 1
+ nspden 1
+
+ ngkpt 6 6 4
+ shiftk    0.0    0.0    0.0
+ charge 0.0
+ nstep 100
+ tsmear 0.01 Ha
+ ecut 42.0
+ ecutsm 1.0
+ chksymbreak 1
+ occopt 1
+ nband 26
+ kptopt 1
+ tolvrs   1.0d-14      # SCF stopping criterion (modify default)
+############################################################################################
+####                                         STRUCTURE                                         
+############################################################################################
+ natom 4
+ ntypat 2
+ typat
+ 1 1 2 2
+ znucl 30 8
+
+                   
+ pp_dirpath "$ABI_PSPDIR/nc-sr-04_pbesol_standard_psp8"
+ pseudos "Zn.psp8 , O.psp8 "
+##############################################
+####                SECTION: basic               
+##############################################
+ tolsym 1e-05
+
+##############################################
+#The relaxation
+##############################################
+#-----------------------
+ ionmov 2
+ #natfix 2
+ #iatfix 1 2 
+ ntime 60
+ optcell 2
+ dilatmx 1.04
+ tolmxf 1.0d-5
+# toldfe 1.0d-12
+ strfact 1000.
+
