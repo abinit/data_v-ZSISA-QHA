@@ -1,0 +1,33 @@
+# README
+
+## Scripts and Files Description
+
+### `run_temperatures.sh`
+
+bash run_temperatures.sh
+
+This script:
+- Generates input files for various temperatures at a single pressure.
+- Executes `workflow.py` for each generated temperature.
+
+### `StressTarget.py`
+
+python StressTarget.py Temp Press
+
+This script:
+- Computes the thermal expansion for a given structure.
+- Reads the structure data from `Relax2o_GSR.nc`. If this file is not present, it defaults to using the reference structure.
+
+
+### `temp_relax.abi`
+- A template file used to generate input files for simulations.
+
+### `workflow.py`
+
+python workflow.py Temp Press
+
+This script:
+- Iteratively calculates thermal stress.
+- Submits relaxation jobs based on the target stress values.
+
+
