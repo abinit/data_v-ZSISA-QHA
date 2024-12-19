@@ -10,7 +10,7 @@ import os
 import abipy.data as abidata
 
 from abipy.dfpt.phonons import PhononBands
-from abipy.dfpt.qha_aproximation import QHA_App
+from abipy.dfpt.vzsisa import Vzsisa
 
 strains = [96,98,100,102,104,106]
 strains2 = [98,100,102,104,106] #EinfVib4(D)
@@ -21,8 +21,8 @@ gsr_paths = [os.path.join( "scale_{:d}_GSR.nc".format(s)) for s in strains]
 ddb_paths = [os.path.join( "scale_{:d}_GSR_DDB".format(s)) for s in strains]
 dos_paths = [os.path.join( "scale_{:d}_PHDOS.nc".format(s)) for s in strains2]
 
-#qha = QHA_App.from_files_app(gsr_paths, dos_paths)
-qha = QHA_App.from_files_app_ddb(ddb_paths, dos_paths)
+#qha = Vzsisa.from_gsr_phdos_files(gsr_paths, dos_paths)
+qha = Vzsisa.from_ddb_phdos_files(ddb_paths, dos_paths)
 qha.plot_energies(tstop=800,tstart=0 ,num=11,title="Energies as a function of volume for different T")
 
 # Vinet
