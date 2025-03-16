@@ -1,0 +1,66 @@
+Python 3.11.11 | packaged by conda-forge | (main, Dec  5 2024, 14:17:24) [GCC 13.3.0]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.31.0 -- An enhanced Interactive Python. Type '?' for help.
+
+
+
+The Abinit file object is associated to the `abifile` python variable.
+Use `abifile.<TAB>` to list available methods.
+Use e.g. `abifile.plot?` to access docstring and `abifile.plot??` to visualize source.
+Use `print(abifile)` to print the object.
+
+
+In [1]: 
+In [2]: ================================= Structure =================================
+Full Formula (Zn2 O2)
+Reduced Formula: ZnO
+abc   :   3.185440   3.185440   5.128934
+angles:  90.000000  90.000000 120.000000
+pbc   :       True       True       True
+Sites (4)
+  #  SP            a         b         c
+---  ----  ---------  --------  --------
+  0  Zn    -0         0         0.000691
+  1  Zn     0.333333  0.666667  0.500691
+  2  O     -0         0         0.380315
+  3  O      0.333333  0.666667  0.880315
+
+============================== Anaddb Variables ==============================
+{
+  "asr": 2,
+  "chneut": 1,
+  "dieflag": 0,
+  "elaflag": 3,
+  "instrflag": 1,
+  "piezoflag": 0
+}
+
+========================= elastic tensors available =========================
+[ELASTIC_RELAXED]
+relaxed-ion elastic tensor in Voigt notation (shape: (6, 6))
+Units: GPa, set to zero below: 0.001, fit_to_structure: True
+
+            xx          yy          zz         yz         xz         xy
+xx  217.604147  150.409007  135.720210   0.000000   0.000000   0.000000
+yy  150.409007  217.604210  135.720213   0.000000   0.000000   0.000000
+zz  135.720199  135.720201  228.303340   0.000000   0.000000   0.000000
+yz    0.000000    0.000000    0.000000  31.676618   0.000000   0.000000
+xz    0.000000    0.000000    0.000000   0.000000  31.676614   0.000000
+xy    0.000000    0.000000    0.000000   0.000000   0.000000  33.597613
+
+[ELASTIC_CLAMPED]
+clamped-ion elastic tensor in Voigt notation (shape: (6, 6))
+Units: GPa, set to zero below: 0.001, fit_to_structure: True
+
+            xx          yy          zz         yz         xz         xy
+xx  312.702868  112.894295   78.426458   0.000000   0.000000   0.000000
+yy  112.894295  312.702936   78.426460   0.000000   0.000000   0.000000
+zz   78.426448   78.426448  342.313253   0.000000   0.000000   0.000000
+yz    0.000000    0.000000    0.000000  57.549242   0.000000   0.000000
+xz    0.000000    0.000000    0.000000   0.000000  57.549241   0.000000
+xy    0.000000    0.000000    0.000000   0.000000   0.000000  99.904319
+
+
+In [3]: 
+In [3]: Do you really want to exit ([y]/n)? 
+
