@@ -92,10 +92,12 @@ def is_job_running(job_id):
 def build_flow(options):
     """ Create a `Flow` for phonon calculations. """
     #options.workdir="flow_all"
-    if not options.workdir:
-        options.workdir = os.path.basename(sys.argv[0]).replace(".py", "").replace("run_", "flow_")
+    #if not options.workdir:
+     #   options.workdir = os.path.basename(sys.argv[0]).replace(".py", "").replace("run_", "flow_")
 
-    flow = flowtk.Flow(workdir=options.workdir)
+    #flow = flowtk.Flow(workdir=options.workdir)
+    flow = flowtk.Flow(workdir="elastic")
+
 
     # Build SCF input and register the first work
     scf_input = make_scf_input(qha, stress=stress, work="elastic" )
@@ -140,16 +142,20 @@ while True:
         if result:
             print("Stress calculation complete. Initiating elastic calculations...")
             workdir = os.path.basename(sys.argv[0]).replace(".py", "").replace("run_", "flow_")
+            workdir = "elastic" 
+            print(workdir)
             ddbdir=workdir+"/w0/outdata/out_DDB"
-            if  os.path.exists(ddbdir):
-                with DdbFile(ddbdir) as ddb:
-                    edata = ddb.anaget_elastic()
-                    check=compare_lattice(edata,qha)
-                    if check:
-                        with open("elastic_constant.txt", "w") as f:
-                            f.write(str(edata))
-            else:
-                shutil.rmtree(workdir)
+
+            if os.path.exists(workdir):
+                if  os.path.exists(ddbdir):
+                    with DdbFile(ddbdir) as ddb:
+                        edata = ddb.anaget_elastic()
+                        check=compare_lattice(edata,qha)
+                        if check:
+                            with open("elastic_constant.txt", "w") as f:
+                                f.write(str(edata))
+                else:
+                    shutil.rmtree(workdir)
                         
             if not os.path.exists(ddbdir):
                 # Parse command-line options and run phonon calculations
