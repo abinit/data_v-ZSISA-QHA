@@ -23,7 +23,6 @@ phdos_paths = [[f"scale_{s1}_{s3}/out_PHDOS.nc" for s3 in bo_strains_c] for s1 i
 
 bo_strains_a = (np.array(bo_strains_a) - 1000)/ 100
 bo_strains_c = (np.array(bo_strains_c) - 1000)/ 100
-
 bo_strains_ac = [bo_strains_a, bo_strains_c]
 
 #qha = QHA_2D.from_files(gsr_paths, phdos_paths, bo_strains_ac, bo_strains_ac, gsr_file="GSR.nc")
